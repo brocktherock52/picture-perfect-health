@@ -2,8 +2,8 @@ import { Quote } from "lucide-react";
 import { UnsplashImage } from "@/components/shared/UnsplashImage";
 
 /**
- * Personal story callout — boxing background and Arthur Mercante Jr. connection.
- * Adds the warmth and nostalgia that turn an "About" page into a relationship.
+ * Personal story callout. The boxing background, Arthur Mercante Jr. nod,
+ * and the moment his mother told him to use his hands to heal instead of hurt.
  */
 export function PersonalStory() {
   return (
@@ -17,7 +17,7 @@ export function PersonalStory() {
                 {/* Verified working Unsplash boxing training gloves photo */}
                 <UnsplashImage
                   src="https://images.unsplash.com/photo-1509255929945-586a420363cf?auto=format&fit=crop&w=1200&q=80"
-                  alt="Red and black boxing training gloves on a wooden plank — a nod to Dr. Feintuch's boxing background"
+                  alt="Red and black boxing training gloves on a wooden plank, a nod to Dr. Feintuch's boxing background"
                   className="aspect-[5/4] object-cover"
                 />
               </div>
@@ -28,28 +28,37 @@ export function PersonalStory() {
                 A personal note
               </p>
               <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl text-balance">
-                Long before he was a doctor, he was a boxer.
+                Long before he was a doctor, he was a fighter.
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-                Dr. Feintuch's first education in the human body did not happen in a classroom.
-                It happened in a boxing gym. The years he spent in the ring — and in the company
-                of New York fight figures like the legendary referee{" "}
-                <strong className="text-foreground">Arthur Mercante Jr.</strong> — taught him
-                things about pain, recovery, discipline, and the way bodies actually break and
-                rebuild that no textbook could.
+                Dr. Feintuch's first education in the human body did not happen in a
+                classroom. It happened in a boxing gym. He was fast, disciplined, and
+                good enough in the ring that even the legendary referee{" "}
+                <strong className="text-foreground">Arthur Mercante Jr.</strong> took
+                notice of him.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                It is the reason he went on to become a Certified Chiropractic Sports Diplomate.
-                It is the reason he treats his corporate wellness clients the way a corner
-                treats a fighter — with honest assessments, real protocols, and a refusal to
-                let anyone go back into the ring before they are ready.
+                Then his mother sat him down.
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                She told him he had a choice. He could use his hands to hurt people in
+                a ring, or he could use those same hands to heal them. "You have a gift
+                in those hands," she said. "You can use them to break people or to fix
+                them."
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                He chose to fix. He hung up the gloves, enrolled at New York
+                Chiropractic College, and spent the next four decades putting his
+                hands on patients instead of opponents.
               </p>
 
               <figure className="mt-8 rounded-xl border-l-4 border-secondary bg-accent/40 p-6">
                 <Quote className="h-6 w-6 text-secondary" aria-hidden="true" />
                 <blockquote className="mt-2 font-serif text-xl leading-snug text-foreground">
-                  Forty years later, the lessons from the ring still show up in every patient
-                  Dr. Feintuch sees and every workforce his team supports.
+                  The discipline from the ring never left him. It is why he treats his
+                  patients the way a corner treats a fighter, and why forty years
+                  later, his mother's words still show up in every appointment he
+                  takes.
                 </blockquote>
               </figure>
             </div>

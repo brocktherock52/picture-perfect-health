@@ -14,7 +14,7 @@ export interface SeoProps {
  */
 export function buildSeo({ title, description, path, image, type = "website" }: SeoProps) {
   const fullTitle =
-    path === "/" ? `${siteConfig.name} — Corporate Wellness That Works` : `${title} — ${siteConfig.name}`;
+    path === "/" ? `${siteConfig.name}, Corporate Wellness That Works` : `${title}, ${siteConfig.name}`;
   const url = `${siteConfig.url}${path}`;
   const ogImage = image || `${siteConfig.url}${siteConfig.ogImage}`;
   return {

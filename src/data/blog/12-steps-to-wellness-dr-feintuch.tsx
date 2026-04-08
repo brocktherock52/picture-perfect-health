@@ -4,7 +4,7 @@ export const post: BlogPost = {
   slug: "12-steps-to-wellness-dr-feintuch",
   title: "The 12 Steps to Wellness: Inside Dr. Feintuch's Signature Program",
   description:
-    "How a 30-year chiropractor built a twelve-step framework that transforms employee health — and why every step matters.",
+    "How a 30-year chiropractor built a twelve-step framework that transforms employee health, and why every step matters.",
   date: "2025-12-09",
   author: "Dr. Eric Feintuch, DC",
   readingTime: "8 min read",
@@ -17,7 +17,7 @@ export const post: BlogPost = {
     <>
       <p className="lead">
         The 12 Steps to Wellness Workshop is the most-requested program in our portfolio. It is
-        the program clients call us about by name. Here is the story of how it came to be — and
+        the program clients call us about by name. Here is the story of how it came to be, and
         why the framework still works after thirty years.
       </p>
 
@@ -25,14 +25,14 @@ export const post: BlogPost = {
       <p>
         I started writing the 12 Steps in the mid-1990s, after years of watching the same patient
         problems repeat themselves. Chiropractic patients came in for back pain, but the back
-        pain was almost always a symptom of something larger — sleep, stress, posture, hydration,
+        pain was almost always a symptom of something larger, sleep, stress, posture, hydration,
         movement, food, mindset. I needed a way to talk to patients about all of it without
         overwhelming them.
       </p>
 
       <p>
         Twelve was the right number. Small enough to be memorable. Large enough to cover the full
-        picture. Each step had to be concrete — something a patient could do that day, not a
+        picture. Each step had to be concrete, something a patient could do that day, not a
         philosophy they had to adopt over a year.
       </p>
 
@@ -61,7 +61,7 @@ export const post: BlogPost = {
 
       <h2>The structure</h2>
       <p>
-        I will not give away every step here — that is what the workshop is for. But the
+        I will not give away every step here, that is what the workshop is for. But the
         framework moves through three arcs: foundation (sleep, hydration, movement), capacity
         (stress, nutrition, posture), and momentum (habit, relationships, mindset). Each step
         builds on the last. Each one is testable in a week.

@@ -20,7 +20,7 @@ export function TechCredibilityCallout() {
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
                 Dr. Feintuch has been a programmer since long before chiropractic school. That
                 technical background is the reason Picture Perfect Health was running virtual
-                workforce wellness years before the rest of the industry caught up — and why our
+                workforce wellness years before the rest of the industry caught up, and why our
                 screening data, reporting, and infrastructure work the way they do.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">

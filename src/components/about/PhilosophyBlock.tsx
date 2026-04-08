@@ -7,7 +7,7 @@ const pillars = [
     icon: HeartPulse,
     title: "Prevention first",
     description:
-      "Most healthcare spending happens after something has gone wrong. We invest upstream — in screenings, education, and habits — so the expensive interventions become rare.",
+      "Most healthcare spending happens after something has gone wrong. We invest upstream, in screenings, education, and habits, so the expensive interventions become rare.",
   },
   {
     icon: Users,
@@ -19,7 +19,7 @@ const pillars = [
     icon: ShieldCheck,
     title: "Privacy by default",
     description:
-      "Individual results stay with the individual. HR sees aggregated, de-identified trends — nothing more. Trust is the foundation of every program we build.",
+      "Individual results stay with the individual. HR sees aggregated, de-identified trends, nothing more. Trust is the foundation of every program we build.",
   },
 ];
 

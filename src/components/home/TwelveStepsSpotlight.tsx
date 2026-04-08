@@ -39,7 +39,7 @@ export function TwelveStepsSpotlight() {
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
               Dr. Feintuch's proprietary methodology, refined over three decades and delivered to
               thousands of employees. Twelve concrete habits that compound into lasting health
-              change — and the most-requested program in our portfolio.
+              change, and the most-requested program in our portfolio.
             </p>
 
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">

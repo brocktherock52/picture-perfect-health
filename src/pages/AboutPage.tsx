@@ -15,7 +15,7 @@ export default function AboutPage() {
   const seo = buildSeo({
     title: "About Dr. Eric Feintuch, DC",
     description:
-      "Dr. Eric Hal Feintuch, D.C., CCSD — 40 years in chiropractic practice, founder of Picture Perfect Health, LLC, creator of the 12 Steps to Wellness Workshop and ChiroVision diagnostic imaging software. Honors graduate of New York Chiropractic College, B.A. Binghamton University. Guest of Senator Ron Johnson and Korean Olympics delegate.",
+      "Dr. Eric Hal Feintuch, D.C., CCSD, 40 years in chiropractic practice, founder of Picture Perfect Health, LLC, creator of the 12 Steps to Wellness Workshop and ChiroVision diagnostic imaging software. Honors graduate of New York Chiropractic College, B.A. Binghamton University. Guest of Senator Ron Johnson and Korean Olympics delegate.",
     path: "/about",
     type: "profile",
   });

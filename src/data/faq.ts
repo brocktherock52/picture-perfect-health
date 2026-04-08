@@ -17,7 +17,7 @@ export const generalFaqs: FaqItem[] = [
   {
     question: "Are virtual health fairs really free?",
     answer:
-      "For qualifying corporate clients, yes — our virtual contactless health fairs are FREE. Call 1-800-GET-WELL to confirm eligibility for your organization.",
+      "For qualifying corporate clients, yes, our virtual contactless health fairs are FREE. Call 1-800-GET-WELL to confirm eligibility for your organization.",
   },
   {
     question: "How quickly can you launch a program?",
@@ -27,7 +27,7 @@ export const generalFaqs: FaqItem[] = [
   {
     question: "How is employee health data protected?",
     answer:
-      "Individual health information is private and shared only with the employee. Employers receive only de-identified, aggregated population health data — never individual records. We follow HIPAA-aware data handling practices end-to-end.",
+      "Individual health information is private and shared only with the employee. Employers receive only de-identified, aggregated population health data, never individual records. We follow HIPAA-aware data handling practices end-to-end.",
   },
   {
     question: "Can you integrate with our existing benefits platform?",

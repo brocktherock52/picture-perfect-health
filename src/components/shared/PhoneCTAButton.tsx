@@ -12,7 +12,7 @@ interface PhoneCTAButtonProps {
 }
 
 /**
- * The single canonical phone CTA. Reads from siteConfig — never hardcode the number.
+ * The single canonical phone CTA. Reads from siteConfig, never hardcode the number.
  */
 export function PhoneCTAButton({
   variant = "secondary",

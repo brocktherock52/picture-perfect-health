@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 
 /**
  * Subtle cross-promotion to ChiroVision (Dr. Feintuch's separate SaaS for chiropractors).
- * Intentionally low-key — corporate buyers don't care, but chiropractor visitors get a path.
+ * Intentionally low-key, corporate buyers don't care, but chiropractor visitors get a path.
  */
 export function ChirovisionCrossPromo() {
   return (
@@ -24,7 +24,7 @@ export function ChirovisionCrossPromo() {
                 Also from Dr. Feintuch
               </p>
               <h3 className="mt-1 font-serif text-2xl font-semibold text-foreground sm:text-3xl">
-                ChiroVision — diagnostic imaging software for chiropractors
+                ChiroVision, diagnostic imaging software for chiropractors
               </h3>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 Image comparison, DICOM support, interactive X-rays, posture analysis, and HCFA

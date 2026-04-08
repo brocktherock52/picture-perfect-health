@@ -16,7 +16,7 @@ const milestones: Milestone[] = [
   },
   {
     year: "1986",
-    title: "Doctor of Chiropractic — graduated with honors",
+    title: "Doctor of Chiropractic, graduated with honors",
     description:
       "New York Chiropractic College (now Northeast College of Health Sciences). Begins clinical practice the same year.",
   },
@@ -36,7 +36,7 @@ const milestones: Milestone[] = [
     year: "Multi-year",
     title: "Quest Diagnostics single-day event for 1,600+ employees",
     description:
-      "Coordinates and delivers a same-day biometric screening campaign for over 1,600 Quest Diagnostics employees in New Jersey — without disrupting operations.",
+      "Coordinates and delivers a same-day biometric screening campaign for over 1,600 Quest Diagnostics employees in New Jersey, without disrupting operations.",
   },
   {
     year: "Ongoing",
@@ -65,7 +65,7 @@ export function NotableEngagements() {
         <SectionHeading
           eyebrow="Career milestones"
           title="Forty years of work, one continuous through-line."
-          description="From a Binghamton humanities degree to building diagnostic software in 2026 — Dr. Feintuch has spent his career at the intersection of medicine, education, and technology."
+          description="From a Binghamton humanities degree to building diagnostic software in 2026, Dr. Feintuch has spent his career at the intersection of medicine, education, and technology."
         />
 
         <div className="mx-auto mt-14 max-w-3xl">

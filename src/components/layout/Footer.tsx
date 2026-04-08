@@ -144,7 +144,7 @@ export function Footer() {
         <div className="mb-8 rounded-lg border border-border bg-background p-5 sm:flex sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">Are you a chiropractor?</span> Dr.
-            Feintuch also built ChiroVision — diagnostic imaging software for clinics.
+            Feintuch also built ChiroVision, diagnostic imaging software for clinics.
           </p>
           <a
             href={siteConfig.chirovisionUrl}

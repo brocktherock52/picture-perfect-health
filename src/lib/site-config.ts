@@ -45,7 +45,7 @@ export const siteConfig = {
       },
       {
         school: "Binghamton University",
-        degree: "Bachelor of Arts — Political Science, Literature & English Language",
+        degree: "Bachelor of Arts, Political Science, Literature & English Language",
         years: "1977–1981",
       },
     ],
@@ -56,7 +56,7 @@ export const siteConfig = {
     },
     programs: [
       "12 Steps to Wellness Workshop",
-      "The Remote Patient — pulmonary care at home program",
+      "The Remote Patient, pulmonary care at home program",
       "Direct Primary Care nationwide network",
     ],
     recognition: [
@@ -79,7 +79,7 @@ export const siteConfig = {
     twitter: "",
     facebook: "",
   },
-  // Header navigation (corporate buyers — chiropractor product is intentionally NOT here)
+  // Header navigation (corporate buyers, chiropractor product is intentionally NOT here)
   nav: [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },

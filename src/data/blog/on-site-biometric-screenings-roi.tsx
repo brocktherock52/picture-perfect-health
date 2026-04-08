@@ -19,7 +19,7 @@ export const post: BlogPost = {
         On-site biometric screenings are a punching bag for wellness skeptics. The argument is
         always the same: they are expensive, they catch things you already know about, and they
         do not change behavior. We have run thousands of them. Here is what they actually
-        deliver — and what they do not.
+        deliver, and what they do not.
       </p>
 
       <h2>The Quest Diagnostics event</h2>
@@ -31,7 +31,7 @@ export const post: BlogPost = {
       </p>
 
       <p>
-        That single day — one disciplined event — generated more individual behavior change in
+        That single day, one disciplined event, generated more individual behavior change in
         the next ninety days than the previous year of wellness emails combined.
       </p>
 
@@ -54,7 +54,7 @@ export const post: BlogPost = {
       <p>
         The aggregated results showed the company exactly which conditions were trending in
         their workforce. That informed the next year of wellness programming. The data was not
-        a deliverable — it was a lever.
+        a deliverable, it was a lever.
       </p>
 
       <h2>What does NOT work</h2>
@@ -70,7 +70,7 @@ export const post: BlogPost = {
         When done right, on-site biometric screenings reliably identify undiagnosed
         hypertension, type 2 diabetes, and dyslipidemia in 5–12 percent of a typical workforce.
         Getting those employees into care within 90 days is where the real cost savings come
-        from — not from the screening itself.
+        from, not from the screening itself.
       </p>
 
       <h2>Want to run one?</h2>

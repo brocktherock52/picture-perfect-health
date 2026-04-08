@@ -13,7 +13,7 @@ export default function ContactPage() {
   const seo = buildSeo({
     title: "Contact Us",
     description:
-      "Talk to Dr. Feintuch's team about a corporate wellness program for your workforce. Call 1-800-GET-WELL or send a message — we respond within one business day.",
+      "Talk to Dr. Feintuch's team about a corporate wellness program for your workforce. Call 1-800-GET-WELL or send a message, we respond within one business day.",
     path: "/contact",
   });
 

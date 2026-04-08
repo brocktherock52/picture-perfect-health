@@ -4,7 +4,7 @@ export const post: BlogPost = {
   slug: "employee-wellness-programs-healthcare-costs",
   title: "The Employee Wellness Programs That Actually Cut Healthcare Costs",
   description:
-    "Most wellness programs do not move the needle on healthcare costs. Here is what does — and what to stop spending on in 2026.",
+    "Most wellness programs do not move the needle on healthcare costs. Here is what does, and what to stop spending on in 2026.",
   date: "2026-01-22",
   author: "Dr. Eric Feintuch, DC",
   readingTime: "9 min read",
@@ -17,7 +17,7 @@ export const post: BlogPost = {
     <>
       <p className="lead">
         Every CFO has the same question about employee wellness: does it actually cut healthcare
-        costs? After thirty years of running these programs, the honest answer is — only the right
+        costs? After thirty years of running these programs, the honest answer is, only the right
         kind does. Most do not.
       </p>
 
@@ -25,7 +25,7 @@ export const post: BlogPost = {
       <p>
         The wellness industry has spent two decades selling pedometers, snack swaps, and lunchtime
         webinars. Some of that is good for morale. Almost none of it is good for the medical loss
-        ratio. The companies that see real cost reduction are doing something different — and it
+        ratio. The companies that see real cost reduction are doing something different, and it
         is usually not what their broker is selling them.
       </p>
 
@@ -35,7 +35,7 @@ export const post: BlogPost = {
       <p>
         Untreated hypertension, undiagnosed type 2 diabetes, and unmanaged cholesterol are the
         three biggest preventable cost drivers in any employer health plan. Annual biometric
-        screenings — done well, with real follow-up — catch these silently expensive conditions
+        screenings, done well, with real follow-up, catch these silently expensive conditions
         years before they become hospital admissions.
       </p>
 
@@ -49,7 +49,7 @@ export const post: BlogPost = {
       <h3>3. Targeting the highest-risk employees</h3>
       <p>
         Twenty percent of any workforce drives eighty percent of the healthcare spend. Generic,
-        whole-population programs spread thin across everyone — and miss the people who would
+        whole-population programs spread thin across everyone, and miss the people who would
         benefit most. Stratified programs concentrate effort where it changes outcomes.
       </p>
 
@@ -64,7 +64,7 @@ export const post: BlogPost = {
       <h2>The math that actually works</h2>
       <p>
         For a 10,000-employee workforce, identifying just one percent of employees with
-        previously undiagnosed type 2 diabetes — and getting them into care within 90 days —
+        previously undiagnosed type 2 diabetes and getting them into care within 90 days
         typically returns more than the entire annual wellness budget within 18 months. The
         leverage is in finding and fixing, not in goodwill.
       </p>

@@ -16,7 +16,7 @@ export function MapEmbed() {
             // Replace src above with a real key once available, or use this fallback:
             // src="https://maps.google.com/maps?q=Valley+Stream,NY&t=&z=13&ie=UTF8&iwloc=&output=embed"
           />
-          {/* Fallback iframe — Google's basic embed which doesn't require an API key. */}
+          {/* Fallback iframe, Google's basic embed which doesn't require an API key. */}
           <noscript>
             <p className="p-4 text-center text-sm text-muted-foreground">
               Headquarters: Valley Stream, New York

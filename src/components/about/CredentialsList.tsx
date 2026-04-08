@@ -12,7 +12,7 @@ const credentials = [
   {
     icon: GraduationCap,
     title: "New York Chiropractic College",
-    description: "Doctor of Chiropractic, 1986 — graduated with honors",
+    description: "Doctor of Chiropractic, 1986, graduated with honors",
   },
   {
     icon: ScrollText,
@@ -22,7 +22,7 @@ const credentials = [
   {
     icon: Trophy,
     title: "Certified Sports Diplomate",
-    description: "CCSD — Certified Chiropractic Sports Diplomate",
+    description: "CCSD, Certified Chiropractic Sports Diplomate",
   },
   {
     icon: Stethoscope,
@@ -37,7 +37,7 @@ const credentials = [
   {
     icon: Code2,
     title: "Software Founder",
-    description: "Built ChiroVision — diagnostic imaging platform for chiropractors",
+    description: "Built ChiroVision, diagnostic imaging platform for chiropractors",
   },
 ];
 

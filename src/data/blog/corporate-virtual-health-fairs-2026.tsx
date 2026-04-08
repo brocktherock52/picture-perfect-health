@@ -4,7 +4,7 @@ export const post: BlogPost = {
   slug: "corporate-virtual-health-fairs-2026",
   title: "Corporate Virtual Health Fairs in 2026: What Actually Works",
   description:
-    "What we have learned running virtual health fairs for Fortune 500 workforces — and the three traps that doom most programs in 2026.",
+    "What we have learned running virtual health fairs for Fortune 500 workforces, and the three traps that doom most programs in 2026.",
   date: "2026-02-14",
   author: "Dr. Eric Feintuch, DC",
   readingTime: "7 min read",
@@ -18,7 +18,7 @@ export const post: BlogPost = {
       <p className="lead">
         After three decades of wellness work and the last six years of pandemic-shifted virtual
         delivery, here is the unvarnished truth about what makes a corporate virtual health fair
-        succeed in 2026 — and the three things we see kill them every single time.
+        succeed in 2026, and the three things we see kill them every single time.
       </p>
 
       <h2>What changed between 2020 and 2026</h2>
@@ -33,7 +33,7 @@ export const post: BlogPost = {
       <h3>1. Treating the fair like a one-time event</h3>
       <p>
         A health fair is a marketing moment, not a finish line. The companies that get real ROI
-        from virtual fairs use them as the front door to a 12-month wellness program — not as a
+        from virtual fairs use them as the front door to a 12-month wellness program, not as a
         check-the-box benefits perk.
       </p>
 

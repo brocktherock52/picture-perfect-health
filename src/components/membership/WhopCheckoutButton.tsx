@@ -10,9 +10,9 @@ interface WhopCheckoutButtonProps {
 }
 
 /**
- * Whop checkout button — currently a placeholder.
+ * Whop checkout button, currently a placeholder.
  *
- * TODO: Whop — replace the empty href with the real Whop checkout URL for this plan.
+ * TODO: Whop, replace the empty href with the real Whop checkout URL for this plan.
  * Get the URL from your Whop dashboard → Products → [Plan] → Checkout link.
  *
  * Example after wiring:
@@ -21,7 +21,7 @@ interface WhopCheckoutButtonProps {
  * Optionally, swap the <a> for a Whop embed if you want in-page checkout.
  */
 export function WhopCheckoutButton({ plan, className, primary = false }: WhopCheckoutButtonProps) {
-  // TODO: Whop — replace this href with the real Whop checkout URL
+  // TODO: Whop, replace this href with the real Whop checkout URL
   const whopCheckoutUrl = "#";
 
   return (
@@ -35,7 +35,7 @@ export function WhopCheckoutButton({ plan, className, primary = false }: WhopChe
           e.preventDefault();
           // eslint-disable-next-line no-console
           console.warn(
-            `[WhopCheckoutButton] No checkout URL configured for plan "${plan}". See WhopCheckoutButton.tsx — search for "TODO: Whop".`
+            `[WhopCheckoutButton] No checkout URL configured for plan "${plan}". See WhopCheckoutButton.tsx, search for "TODO: Whop".`
           );
         }
       }}

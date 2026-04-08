@@ -70,12 +70,12 @@ const membershipFaqs = [
   {
     question: "Can I switch plans later?",
     answer:
-      "Yes — upgrade or downgrade at any time. Prorated billing applies. Enterprise migrations include a free onboarding call.",
+      "Yes, upgrade or downgrade at any time. Prorated billing applies. Enterprise migrations include a free onboarding call.",
   },
   {
     question: "Is this the same content Dr. Feintuch delivers to Fortune 500 clients?",
     answer:
-      "The methodology is the same. Live custom workshops for Fortune 500 clients are tailored to their workforce — but the underlying 12 Steps framework, workbook, and educational content are identical to what members receive.",
+      "The methodology is the same. Live custom workshops for Fortune 500 clients are tailored to their workforce, but the underlying 12 Steps framework, workbook, and educational content are identical to what members receive.",
   },
   {
     question: "Do you offer refunds?",
@@ -88,7 +88,7 @@ export default function MembershipPage() {
   const seo = buildSeo({
     title: "Membership",
     description:
-      "Premium wellness content from Dr. Eric Feintuch — Individual, Corporate, and Enterprise membership tiers with the 12 Steps workbook, courses, and live Q&A.",
+      "Premium wellness content from Dr. Eric Feintuch, Individual, Corporate, and Enterprise membership tiers with the 12 Steps workbook, courses, and live Q&A.",
     path: "/membership",
   });
 
@@ -107,7 +107,7 @@ export default function MembershipPage() {
           <SectionHeading
             eyebrow="Membership"
             title="Premium wellness content from Dr. Feintuch."
-            description="Three membership tiers — for individuals taking ownership of their health, for small teams who want a real wellness benefit, and for enterprises ready for full custom engagement."
+            description="Three membership tiers, for individuals taking ownership of their health, for small teams who want a real wellness benefit, and for enterprises ready for full custom engagement."
           />
         </div>
       </section>

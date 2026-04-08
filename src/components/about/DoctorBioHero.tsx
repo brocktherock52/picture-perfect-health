@@ -42,7 +42,7 @@ export function DoctorBioHero() {
                 Perfect Health and began bringing his clinical experience to corporate workforces
                 that needed it most. Nearly twenty years later, his programs have served United
                 Airlines, GE Healthcare, Quest Diagnostics, federal agencies, and Fortune 500
-                employers across all 50 states — workforces ranging from 50 to over 250,000
+                employers across all 50 states, workforces ranging from 50 to over 250,000
                 people.
               </p>
               <p>
@@ -50,7 +50,7 @@ export function DoctorBioHero() {
                 Stream, NY, and a lifelong technologist. He created{" "}
                 <strong className="text-foreground">The Remote Patient</strong>, a pulmonary care
                 at-home program for monitoring patients between office visits, and built{" "}
-                <strong className="text-foreground">ChiroVision</strong> — the diagnostic imaging
+                <strong className="text-foreground">ChiroVision</strong>, the diagnostic imaging
                 software platform that ships to chiropractic clinics nationwide.
               </p>
               <p>
@@ -61,7 +61,7 @@ export function DoctorBioHero() {
                 complex science into language people actually use.
               </p>
               <p>
-                And before any of it, he was a boxer — which is a longer story, told a bit
+                And before any of it, he was a boxer, which is a longer story, told a bit
                 further down this page.
               </p>
             </div>

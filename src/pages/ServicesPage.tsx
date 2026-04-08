@@ -14,7 +14,7 @@ export default function ServicesPage() {
   const seo = buildSeo({
     title: "Wellness Services for Employers",
     description:
-      "Virtual contactless health fairs, biometric screenings, the 12 Steps to Wellness Workshop, custom corporate wellness programs, on-site events, and online patient monitoring — for workforces of 50 to 250,000+ employees in all 50 states.",
+      "Virtual contactless health fairs, biometric screenings, the 12 Steps to Wellness Workshop, custom corporate wellness programs, on-site events, and online patient monitoring, for workforces of 50 to 250,000+ employees in all 50 states.",
     path: "/services",
   });
 

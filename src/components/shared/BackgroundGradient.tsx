@@ -7,7 +7,7 @@ interface BackgroundGradientProps {
 
 /**
  * Decorative gradient background for hero sections and CTA bands.
- * Pure CSS — no images, no layout shift.
+ * Pure CSS, no images, no layout shift.
  */
 export function BackgroundGradient({ className, variant = "hero" }: BackgroundGradientProps) {
   if (variant === "hero") {

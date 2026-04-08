@@ -58,7 +58,7 @@ export function LeadCaptureModal() {
         <DialogHeader>
           <DialogTitle>Get a free wellness consultation</DialogTitle>
           <DialogDescription>
-            Tell us a bit about your company. We'll be in touch within one business day — no
+            Tell us a bit about your company. We'll be in touch within one business day, no
             credit card, no commitment.
           </DialogDescription>
         </DialogHeader>

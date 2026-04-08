@@ -20,7 +20,7 @@ export const services: Service[] = [
     slug: "virtual-health-fairs",
     name: "Virtual Contactless Health Fairs",
     shortDescription:
-      "Bring a full health fair to every employee — wherever they work — with zero logistics on your end.",
+      "Bring a full health fair to every employee, wherever they work, with zero logistics on your end.",
     longDescription:
       "Our virtual health fairs deliver expert wellness content, live screenings, and one-on-one consultations directly to employees across every time zone. No booths to set up. No event to staff. No travel costs. Just measurable engagement and better health outcomes for your distributed workforce.",
     icon: Video,
@@ -53,7 +53,7 @@ export const services: Service[] = [
       {
         question: "How many employees can attend a virtual health fair?",
         answer:
-          "We have run virtual health fairs for audiences ranging from 50 employees up to 250,000+. The platform scales linearly — adding employees does not change the format or cost structure.",
+          "We have run virtual health fairs for audiences ranging from 50 employees up to 250,000+. The platform scales linearly, adding employees does not change the format or cost structure.",
       },
       {
         question: "Is there any cost to my company?",
@@ -63,7 +63,7 @@ export const services: Service[] = [
       {
         question: "Do employees need to install anything?",
         answer:
-          "No. Everything runs in a standard web browser. Employees join with a link — no software, no plugins, no IT tickets.",
+          "No. Everything runs in a standard web browser. Employees join with a link, no software, no plugins, no IT tickets.",
       },
     ],
     heroImage:
@@ -76,7 +76,7 @@ export const services: Service[] = [
     shortDescription:
       "Biometric screenings delivered safely, at scale, with results in hand within days.",
     longDescription:
-      "Our contact-free screening program delivers blood pressure, cholesterol, glucose, BMI, and full biometric panels with strict safety protocols. Whether on-site or via at-home kits, employees get fast, accurate results — and your benefits team gets the population health data needed to design better programs.",
+      "Our contact-free screening program delivers blood pressure, cholesterol, glucose, BMI, and full biometric panels with strict safety protocols. Whether on-site or via at-home kits, employees get fast, accurate results, and your benefits team gets the population health data needed to design better programs.",
     icon: Stethoscope,
     features: [
       "Blood pressure, cholesterol, glucose, BMI, and lipid panels",
@@ -107,7 +107,7 @@ export const services: Service[] = [
       {
         question: "How is patient data handled?",
         answer:
-          "Individual results are private and shared only with the employee. HR receives only de-identified, aggregated population health data — never individual records.",
+          "Individual results are private and shared only with the employee. HR receives only de-identified, aggregated population health data, never individual records.",
       },
       {
         question: "Can we run screenings across multiple locations?",
@@ -123,7 +123,7 @@ export const services: Service[] = [
     slug: "12-steps-to-wellness",
     name: "12 Steps to Wellness Workshop",
     shortDescription:
-      "Dr. Feintuch's signature program — a proven, twelve-step framework that has transformed thousands of employees.",
+      "Dr. Feintuch's signature program, a proven, twelve-step framework that has transformed thousands of employees.",
     longDescription:
       "The 12 Steps to Wellness Workshop is a proprietary methodology Dr. Eric Feintuch developed and refined over three decades. Delivered virtually or on-site, this multi-session workshop walks employees through twelve concrete habits that compound into lasting health change. It is the most-requested program in our portfolio.",
     icon: ListChecks,
@@ -131,7 +131,7 @@ export const services: Service[] = [
       "Twelve concrete, science-backed habits",
       "Live virtual or on-site delivery",
       "Includes workbook and 30-day follow-up plan",
-      "Modular — runs in single sessions or multi-week formats",
+      "Modular, runs in single sessions or multi-week formats",
       "Tracks self-reported behavior change at 30, 60, and 90 days",
       "Created and personally delivered by Dr. Feintuch",
     ],
@@ -223,7 +223,7 @@ export const services: Service[] = [
     shortDescription:
       "Full-service on-site health fairs and screening events at any location, in any state.",
     longDescription:
-      "When your culture calls for in-person engagement, our on-site events deliver. From single-location lunch-and-learns to nationwide multi-site biometric screening campaigns, we coordinate the staff, the equipment, the safety protocols, and the follow-up care — so your team can focus on showing up.",
+      "When your culture calls for in-person engagement, our on-site events deliver. From single-location lunch-and-learns to nationwide multi-site biometric screening campaigns, we coordinate the staff, the equipment, the safety protocols, and the follow-up care, so your team can focus on showing up.",
     icon: CalendarDays,
     features: [
       "Single-site events from 50 to 5,000 employees",
@@ -272,7 +272,7 @@ export const services: Service[] = [
     shortDescription:
       "Ongoing virtual care between events, so health gains compound instead of fading.",
     longDescription:
-      "Health fairs and screenings are one-time touch-points. Real outcomes come from sustained engagement. Our online patient monitoring program connects employees with licensed clinicians for ongoing virtual check-ins, lifestyle coaching, and data-driven progress tracking — turning a single event into a year-long behavior change program.",
+      "Health fairs and screenings are one-time touch-points. Real outcomes come from sustained engagement. Our online patient monitoring program connects employees with licensed clinicians for ongoing virtual check-ins, lifestyle coaching, and data-driven progress tracking, turning a single event into a year-long behavior change program.",
     icon: Activity,
     features: [
       "Secure, browser-based clinician check-ins",
