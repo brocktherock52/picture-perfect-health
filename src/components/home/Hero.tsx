@@ -17,7 +17,7 @@ export function Hero() {
           <div className="max-w-xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-secondary">
               <Star className="h-3 w-3" />
-              30+ years · Fortune 500 trusted
+              40 years · Fortune 500 trusted
             </span>
             <h1 className="mt-5 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
               Corporate wellness that{" "}

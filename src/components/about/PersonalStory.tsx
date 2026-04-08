@@ -14,10 +14,10 @@ export function PersonalStory() {
             <div className="relative order-2 lg:order-1">
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-secondary/20 via-accent to-transparent blur-2xl" />
               <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
-                {/* TODO: replace with real photo of Dr. Feintuch (boxing days or sport medicine context) */}
+                {/* Verified working Unsplash boxing training gloves photo */}
                 <UnsplashImage
-                  src="https://images.unsplash.com/photo-1615117972428-28de67cda4c6?auto=format&fit=crop&w=1200&q=80"
-                  alt="Boxing gloves resting on a rope — a nod to Dr. Feintuch's boxing background"
+                  src="https://images.unsplash.com/photo-1509255929945-586a420363cf?auto=format&fit=crop&w=1200&q=80"
+                  alt="Red and black boxing training gloves on a wooden plank — a nod to Dr. Feintuch's boxing background"
                   className="aspect-[5/4] object-cover"
                 />
               </div>

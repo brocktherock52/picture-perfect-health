@@ -8,13 +8,13 @@ export function DoctorBioHero() {
         <div className="grid items-center gap-12 lg:grid-cols-[5fr,7fr]">
           <div className="relative">
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-secondary/20 via-accent to-transparent blur-2xl" />
-            <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
-              {/* TODO: replace with real photo of Dr. Eric Feintuch */}
+            <div className="overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-accent/30 to-secondary/10 shadow-soft">
+              {/* Real photo of Dr. Eric Feintuch, sourced from pictureperfecthealth.com */}
               <UnsplashImage
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80"
+                src="https://pictureperfecthealth.com/Eric3.jpg"
                 alt="Portrait of Dr. Eric Feintuch, DC, founder of Picture Perfect Health"
                 priority
-                className="aspect-[4/5] object-cover"
+                className="aspect-[4/5] object-contain"
               />
             </div>
           </div>
