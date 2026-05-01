@@ -28,7 +28,7 @@ export function ChirovisionCrossPromo() {
               </h3>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 Image comparison, DICOM support, interactive X-rays, posture analysis, and HCFA
-                1500 billing. Built by a doctor who codes. Try it free for 10 days.
+                1500 billing. Built by a doctor with 40 years at the table. Try it free for 10 days.
               </p>
             </div>
             <span className="inline-flex items-center gap-1 self-start text-sm font-semibold text-secondary md:self-center">
