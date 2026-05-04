@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { UnsplashImage } from "@/components/shared/UnsplashImage";
+import { Reveal, Stagger, staggerItem } from "@/components/shared/Reveal";
 
 const highlights = [
   "Twelve concrete, science-backed habits",
@@ -18,18 +20,22 @@ export function TwelveStepsSpotlight() {
     <section className="bg-background py-20 sm:py-24">
       <div className="container">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative order-2 lg:order-1">
+          <Reveal direction="right" className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-accent via-secondary/20 to-transparent blur-2xl" />
-            <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
+            <motion.div
+              className="overflow-hidden rounded-2xl border border-border shadow-soft"
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+            >
               <UnsplashImage
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
                 alt="Group of professionals attending a wellness workshop led by Dr. Feintuch"
                 className="aspect-[5/4] object-cover"
               />
-            </div>
-          </div>
+            </motion.div>
+          </Reveal>
 
-          <div className="order-1 lg:order-2">
+          <Reveal direction="left" className="order-1 lg:order-2">
             <Badge variant="secondary" className="mb-4">
               Signature Program
             </Badge>
@@ -42,22 +48,33 @@ export function TwelveStepsSpotlight() {
               change, and the most-requested program in our portfolio.
             </p>
 
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            <Stagger
+              className="mt-6 grid gap-3 sm:grid-cols-2"
+              stagger={0.06}
+              initialDelay={0.1}
+            >
               {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-foreground">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-secondary" aria-hidden="true" />
+                <motion.div
+                  key={item}
+                  variants={staggerItem}
+                  className="flex items-start gap-2 text-sm text-foreground"
+                >
+                  <Check
+                    className="mt-0.5 h-4 w-4 shrink-0 text-secondary"
+                    aria-hidden="true"
+                  />
                   <span>{item}</span>
-                </li>
+                </motion.div>
               ))}
-            </ul>
+            </Stagger>
 
-            <Button asChild size="lg" className="mt-8">
+            <Button asChild size="lg" className="mt-8 shadow-soft">
               <Link to="/services/12-steps-to-wellness">
                 Explore the workshop
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

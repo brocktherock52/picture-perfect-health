@@ -34,3 +34,8 @@ lerna-debug.log*
 .env.*.local
 
 .vercel
+
+# TS / Vite build artifacts
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js
