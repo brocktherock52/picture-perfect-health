@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { UnsplashImage } from "@/components/shared/UnsplashImage";
+import { AssetImage } from "@/components/shared/AssetImage";
 import { Reveal, Stagger, staggerItem } from "@/components/shared/Reveal";
 
 const highlights = [
@@ -27,8 +27,8 @@ export function TwelveStepsSpotlight() {
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 300, damping: 24 }}
             >
-              <UnsplashImage
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
+              <AssetImage
+                src="/twelve-steps.jpg"
                 alt="Group of professionals attending a wellness workshop led by Dr. Feintuch"
                 className="aspect-[5/4] object-cover"
               />

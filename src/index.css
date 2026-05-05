@@ -4,65 +4,78 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 215 45% 12%;
+    /* Claude-aesthetic warm sand canvas */
+    --background: 38 38% 96%;
+    --foreground: 215 35% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 45% 12%;
+    --card-foreground: 215 35% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 45% 12%;
+    --popover-foreground: 215 35% 12%;
 
-    --primary: 215 65% 20%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 215 60% 18%;
+    --primary-foreground: 38 38% 96%;
 
-    --secondary: 166 65% 45%;
+    --secondary: 166 60% 38%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 94%;
-    --muted-foreground: 215 20% 40%;
+    --muted: 38 25% 92%;
+    --muted-foreground: 215 18% 38%;
 
-    --accent: 160 75% 92%;
-    --accent-foreground: 215 65% 20%;
+    --accent: 38 60% 88%;
+    --accent-foreground: 215 60% 18%;
+
+    --gold: 30 78% 52%;
+    --gold-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 25% 88%;
-    --input: 215 25% 88%;
-    --ring: 166 65% 45%;
+    --border: 38 18% 84%;
+    --input: 38 18% 84%;
+    --ring: 166 60% 38%;
 
-    --radius: 0.75rem;
+    --ink: 215 40% 9%;
+    --ink-foreground: 38 38% 96%;
+
+    --radius: 1rem;
   }
 
   .dark {
-    --background: 215 50% 7%;
-    --foreground: 210 40% 96%;
+    --background: 215 45% 7%;
+    --foreground: 38 25% 95%;
 
-    --card: 215 45% 11%;
-    --card-foreground: 210 40% 96%;
+    --card: 215 40% 11%;
+    --card-foreground: 38 25% 95%;
 
-    --popover: 215 45% 11%;
-    --popover-foreground: 210 40% 96%;
+    --popover: 215 40% 11%;
+    --popover-foreground: 38 25% 95%;
 
-    --primary: 166 65% 50%;
-    --primary-foreground: 215 50% 7%;
+    --primary: 166 60% 50%;
+    --primary-foreground: 215 45% 7%;
 
-    --secondary: 215 40% 22%;
-    --secondary-foreground: 210 40% 96%;
+    --secondary: 215 35% 22%;
+    --secondary-foreground: 38 25% 95%;
 
-    --muted: 215 35% 16%;
-    --muted-foreground: 210 25% 70%;
+    --muted: 215 30% 16%;
+    --muted-foreground: 38 15% 70%;
 
-    --accent: 166 50% 18%;
+    --accent: 166 45% 18%;
     --accent-foreground: 166 75% 85%;
 
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 210 40% 96%;
+    --gold: 30 78% 60%;
+    --gold-foreground: 215 45% 7%;
 
-    --border: 215 30% 20%;
-    --input: 215 30% 20%;
-    --ring: 166 65% 50%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 38 25% 95%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 166 60% 50%;
+
+    --ink: 38 25% 95%;
+    --ink-foreground: 215 45% 7%;
   }
 }
 
@@ -77,20 +90,29 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
+    font-feature-settings: "ss01" 1, "ss02" 1;
   }
 
   :focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    background-color: hsl(var(--secondary) / 0.25);
+    color: hsl(var(--ink));
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
   }
 }
