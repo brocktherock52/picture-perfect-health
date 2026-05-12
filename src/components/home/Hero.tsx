@@ -111,6 +111,7 @@ export function Hero() {
                     {...wordFade(i)}
                   >
                     {w}
+                    {i < headlineLine1.length - 1 && <span className="sr-only"> </span>}
                   </motion.span>
                 ))}
               </span>
@@ -130,6 +131,7 @@ export function Hero() {
                       ) : (
                         w
                       )}
+                      {i < headlineLine2.length - 1 && <span className="sr-only"> </span>}
                     </motion.span>
                   );
                 })}
