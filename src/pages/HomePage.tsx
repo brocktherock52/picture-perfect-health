@@ -10,6 +10,7 @@ import { FoundersLetter } from "@/components/home/FoundersLetter";
 import { BoxingTimeline } from "@/components/home/BoxingTimeline";
 import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { ChirovisionCrossPromo } from "@/components/home/ChirovisionCrossPromo";
+import { SubscribeQuarterly } from "@/components/home/SubscribeQuarterly";
 import { CTASection } from "@/components/shared/CTASection";
 import { Seo } from "@/components/shared/Seo";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -49,6 +50,7 @@ export default function HomePage() {
       <BoxingTimeline />
       <TestimonialCarousel />
       <ChirovisionCrossPromo />
+      <SubscribeQuarterly />
       <CTASection />
     </>
   );

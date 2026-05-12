@@ -116,3 +116,106 @@
     text-wrap: pretty;
   }
 }
+
+/* Custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  body.cursor-none-host,
+  body.cursor-none-host * {
+    cursor: none !important;
+  }
+}
+.ppr-cursor-ring.is-hover {
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  background: hsl(var(--secondary) / 0.12);
+  border-color: hsl(var(--secondary));
+}
+.ppr-cursor-ring.is-large {
+  width: 92px;
+  height: 92px;
+  background: hsl(var(--secondary));
+  border-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+.ppr-cursor-ring.is-large span {
+  color: hsl(var(--secondary-foreground));
+}
+.ppr-cursor-ring.is-invert {
+  border-color: hsl(38 38% 96%);
+  mix-blend-mode: difference;
+}
+.ppr-cursor-dot {
+  mix-blend-mode: difference;
+  background: hsl(38 38% 96%);
+}
+
+/* Section-wide cursor color flips for dark sections */
+[data-cursor-invert] {
+  --foreground: 38 38% 96%;
+}
+
+/* Editorial display utilities */
+.display-tight {
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+.display-loose {
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.eyebrow {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+/* Magazine-style number watermark */
+.watermark-num {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-feature-settings: "ss01" 1, "lnum" 1;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
+}
+
+/* Marquee row that uses CSS animation so :hover pause works reliably */
+@keyframes marquee-left {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes marquee-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+.marquee-row {
+  animation: marquee-left 42s linear infinite;
+  will-change: transform;
+}
+.marquee-row-fast {
+  animation: marquee-left 28s linear infinite;
+  will-change: transform;
+}
+.marquee-row-reverse {
+  animation: marquee-right 34s linear infinite;
+  will-change: transform;
+}
+.marquee-wrap:hover .marquee-row,
+.marquee-wrap:hover .marquee-row-fast,
+.marquee-wrap:hover .marquee-row-reverse {
+  animation-play-state: paused;
+}
+
+/* Subtle paper grain mix-mode helper */
+.paper-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(hsl(215 35% 12% / 0.5) 1px, transparent 1px);
+  background-size: 3px 3px;
+}

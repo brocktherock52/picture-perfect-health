@@ -1,28 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { Check, Heart, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Heart, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const year = new Date().getFullYear();
   const reduce = useReducedMotion();
-  const [email, setEmail] = useState("");
-  const [sent, setSent] = useState(false);
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-    // Newsletter wiring lives at the contact form; here we just animate success.
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setEmail("");
-    }, 3200);
-  };
 
   return (
     <footer
@@ -46,74 +30,34 @@ export function Footer() {
         }}
       />
 
-      <div className="container relative py-16">
-        {/* Newsletter row */}
-        <div className="mb-12 rounded-2xl border border-foreground/10 bg-card p-6 shadow-soft sm:p-8">
-          <div className="grid items-center gap-6 md:grid-cols-[1.2fr,1fr]">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
-                The Picture Perfect Brief
-              </p>
-              <h3 className="mt-2 font-serif text-2xl font-semibold text-foreground sm:text-3xl text-balance">
-                One short note a month on workforce health.
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Field-tested ideas from Dr. Feintuch and the team. No spam, ever.
-              </p>
-            </div>
-            <form onSubmit={onSubmit} className="relative">
-              <AnimatePresence mode="wait" initial={false}>
-                {sent ? (
-                  <motion.div
-                    key="ok"
-                    initial={reduce ? { opacity: 1 } : { opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex items-center gap-3 rounded-full border border-secondary/30 bg-secondary/10 px-5 py-3 text-sm font-semibold text-secondary"
-                  >
-                    <motion.span
-                      className="flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-secondary-foreground"
-                      initial={reduce ? { scale: 1 } : { scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 280, damping: 18 }}
-                    >
-                      <Check className="h-3.5 w-3.5" />
-                    </motion.span>
-                    You are on the list. Welcome.
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="form"
-                    initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex flex-col gap-2 sm:flex-row"
-                  >
-                    <Input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@company.com"
-                      aria-label="Work email"
-                      className="h-12 rounded-full bg-background px-5"
-                    />
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="h-12 rounded-full px-6 shadow-soft"
-                    >
-                      Subscribe
-                    </Button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </form>
-          </div>
-        </div>
+      {/* Giant Fraunces "PPH" watermark + drifting spine */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 flex items-end justify-center overflow-hidden"
+      >
+        <span
+          className="watermark-num select-none text-[24rem] font-semibold leading-[0.8] text-foreground/[0.05] sm:text-[32rem]"
+          style={{ letterSpacing: "-0.06em", transform: "translateY(20%)" }}
+        >
+          PPH
+        </span>
+      </div>
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-20 top-10 -z-0 hidden h-full w-72 text-secondary/40 lg:block"
+        animate={reduce ? undefined : { y: [0, -10, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <svg viewBox="0 0 200 600" className="h-full w-full" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
+          <path d="M100 20 C 130 80, 70 140, 110 200 C 150 260, 60 320, 110 380 C 160 440, 80 500, 100 580" />
+          {Array.from({ length: 9 }).map((_, i) => {
+            const y = 50 + i * 60;
+            return <path key={i} d={`M${72 + (i % 2) * 36} ${y} q 28 -12, 56 0 q -28 12, -56 0 z`} />;
+          })}
+        </svg>
+      </motion.div>
 
+      <div className="container relative py-20">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2" aria-label="Picture Perfect Health">

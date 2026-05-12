@@ -8,6 +8,9 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { ScrollProgress } from "@/components/shared/ScrollProgress";
 import { GrainOverlay } from "@/components/shared/GrainOverlay";
 import { StickyScrollCTA } from "@/components/shared/StickyScrollCTA";
+import { LenisProvider } from "@/components/shared/LenisProvider";
+import { CustomCursor } from "@/components/shared/CustomCursor";
+import { LoadingReveal } from "@/components/shared/LoadingReveal";
 import { organizationSchema, personSchema, faqSchema } from "@/lib/schema";
 import { generalFaqs } from "@/data/faq";
 
@@ -30,6 +33,9 @@ function App() {
       <JsonLd data={personSchema()} />
       <JsonLd data={faqSchema(generalFaqs)} />
 
+      <LenisProvider />
+      <LoadingReveal />
+      <CustomCursor />
       <ScrollProgress />
       <GrainOverlay />
 
