@@ -4,6 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LeadCaptureModal } from "@/components/shared/LeadCaptureModal";
 import { JsonLd } from "@/components/shared/JsonLd";
+import { ScrollProgress } from "@/components/shared/ScrollProgress";
+import { GrainOverlay } from "@/components/shared/GrainOverlay";
 import { organizationSchema } from "@/lib/schema";
 
 import HomePage from "@/pages/HomePage";
@@ -19,9 +21,12 @@ import NotFoundPage from "@/pages/NotFoundPage";
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="relative flex min-h-screen flex-col bg-background">
       {/* Site-wide JSON-LD: Organization / ProfessionalService */}
       <JsonLd data={organizationSchema()} />
+
+      <ScrollProgress />
+      <GrainOverlay />
 
       <Header />
 

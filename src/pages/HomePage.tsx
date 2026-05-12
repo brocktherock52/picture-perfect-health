@@ -1,8 +1,11 @@
 import { Hero } from "@/components/home/Hero";
-import { TrustBar } from "@/components/home/TrustBar";
+import { LogoMarquee } from "@/components/home/LogoMarquee";
 import { StatsStrip } from "@/components/home/StatsStrip";
+import { CaseStudyTriptych } from "@/components/home/CaseStudyTriptych";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { TwelveStepsSpotlight } from "@/components/home/TwelveStepsSpotlight";
+import { TwelveStepsScrolly } from "@/components/home/TwelveStepsScrolly";
+import { FoundersLetter } from "@/components/home/FoundersLetter";
+import { BoxingTimeline } from "@/components/home/BoxingTimeline";
 import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { ChirovisionCrossPromo } from "@/components/home/ChirovisionCrossPromo";
 import { CTASection } from "@/components/shared/CTASection";
@@ -31,10 +34,13 @@ export default function HomePage() {
         }}
       />
       <Hero />
-      <TrustBar />
+      <LogoMarquee />
       <StatsStrip />
+      <CaseStudyTriptych />
       <ServicesGrid />
-      <TwelveStepsSpotlight />
+      <TwelveStepsScrolly />
+      <FoundersLetter />
+      <BoxingTimeline />
       <TestimonialCarousel />
       <ChirovisionCrossPromo />
       <CTASection />

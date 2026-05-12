@@ -3,6 +3,7 @@ import { getServiceBySlug } from "@/data/services";
 import { ServiceDetailHero } from "@/components/services/ServiceDetailHero";
 import { ServiceFeatureList } from "@/components/services/ServiceFeatureList";
 import { ServiceFAQ } from "@/components/services/ServiceFAQ";
+import { TwelveStepsScrolly } from "@/components/home/TwelveStepsScrolly";
 import { CTASection } from "@/components/shared/CTASection";
 import { Seo } from "@/components/shared/Seo";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -44,6 +45,7 @@ export default function ServiceDetailPage() {
       />
 
       <ServiceDetailHero service={service} />
+      {service.slug === "12-steps-to-wellness" && <TwelveStepsScrolly />}
       <ServiceFeatureList features={service.features} howItWorks={service.howItWorks} />
       <ServiceFAQ faqs={service.faqs} />
       <CTASection

@@ -1,19 +1,120 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Heart, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { Check, Heart, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Separator } from "@/components/ui/separator";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const reduce = useReducedMotion();
+  const [email, setEmail] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    // Newsletter wiring lives at the contact form; here we just animate success.
+    setSent(true);
+    setTimeout(() => {
+      setSent(false);
+      setEmail("");
+    }, 3200);
+  };
 
   return (
-    <footer className="border-t border-border bg-muted/30" aria-labelledby="site-footer">
+    <footer
+      className="relative overflow-hidden border-t border-border bg-muted/30"
+      aria-labelledby="site-footer"
+    >
       <h2 id="site-footer" className="sr-only">
         Site footer
       </h2>
-      <div className="container py-16">
+
+      {/* Slow-drifting animated SVG pattern */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-30 [mask-image:radial-gradient(circle_at_center,white,transparent_75%)]"
+        animate={reduce ? undefined : { backgroundPositionX: ["0px", "240px"] }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><g fill='none' stroke='%232bb8a0' stroke-width='0.55'><circle cx='60' cy='60' r='4'/><circle cx='60' cy='60' r='18'/><circle cx='60' cy='60' r='32'/><path d='M0 60h120M60 0v120'/></g></svg>\")",
+          backgroundSize: "120px 120px",
+        }}
+      />
+
+      <div className="container relative py-16">
+        {/* Newsletter row */}
+        <div className="mb-12 rounded-2xl border border-foreground/10 bg-card p-6 shadow-soft sm:p-8">
+          <div className="grid items-center gap-6 md:grid-cols-[1.2fr,1fr]">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-secondary">
+                The Picture Perfect Brief
+              </p>
+              <h3 className="mt-2 font-serif text-2xl font-semibold text-foreground sm:text-3xl text-balance">
+                One short note a month on workforce health.
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Field-tested ideas from Dr. Feintuch and the team. No spam, ever.
+              </p>
+            </div>
+            <form onSubmit={onSubmit} className="relative">
+              <AnimatePresence mode="wait" initial={false}>
+                {sent ? (
+                  <motion.div
+                    key="ok"
+                    initial={reduce ? { opacity: 1 } : { opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex items-center gap-3 rounded-full border border-secondary/30 bg-secondary/10 px-5 py-3 text-sm font-semibold text-secondary"
+                  >
+                    <motion.span
+                      className="flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-secondary-foreground"
+                      initial={reduce ? { scale: 1 } : { scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 280, damping: 18 }}
+                    >
+                      <Check className="h-3.5 w-3.5" />
+                    </motion.span>
+                    You are on the list. Welcome.
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="form"
+                    initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex flex-col gap-2 sm:flex-row"
+                  >
+                    <Input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@company.com"
+                      aria-label="Work email"
+                      className="h-12 rounded-full bg-background px-5"
+                    />
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="h-12 rounded-full px-6 shadow-soft"
+                    >
+                      Subscribe
+                    </Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </form>
+          </div>
+        </div>
+
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2" aria-label="Picture Perfect Health">
               <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
@@ -41,7 +142,6 @@ export function Footer() {
             )}
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="mb-4 font-serif text-base font-semibold text-foreground">Company</h3>
             <ul className="space-y-2 text-sm">
@@ -68,7 +168,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="mb-4 font-serif text-base font-semibold text-foreground">Services</h3>
             <ul className="space-y-2 text-sm">
@@ -112,7 +211,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="mb-4 font-serif text-base font-semibold text-foreground">Contact</h3>
             <ul className="space-y-3 text-sm">
@@ -140,7 +238,6 @@ export function Footer() {
 
         <Separator className="my-10" />
 
-        {/* ChiroVision cross-promo */}
         <div className="mb-8 rounded-lg border border-border bg-background p-5 sm:flex sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">Are you a chiropractor?</span> Dr.
@@ -152,14 +249,14 @@ export function Footer() {
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:underline sm:mt-0"
           >
-            Try it free for 10 days →
+            Try it free for 10 days
           </a>
         </div>
 
         <div className="flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {year} {siteConfig.legalName}. All rights reserved.</p>
           <p>
-            HIPAA-aware data practices · Serving all 50 states · Founded by Dr. Eric Feintuch, DC
+            HIPAA-aware data practices . Serving all 50 states . Founded by Dr. Eric Feintuch, DC
           </p>
         </div>
       </div>
