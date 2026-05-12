@@ -246,7 +246,7 @@ export function Hero() {
               >
                 <AssetImage
                   src="/hero-pph.jpg"
-                  alt="Dr. Eric Hal Feintuch, founder of Picture Perfect Health"
+                  alt="Dr. Eric Hal Feintuch, D.C., Long Island chiropractor and Fortune 500 corporate employee wellness program founder of Picture Perfect Health"
                   priority
                   className="aspect-[4/5] object-cover sm:aspect-[5/6] md:aspect-[4/5]"
                 />

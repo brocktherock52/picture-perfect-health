@@ -4,27 +4,27 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 const photos = [
   {
     src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
-    alt: "Healthcare workers conducting on-site biometric screenings",
+    alt: "On-site biometric screenings delivered by Picture Perfect Health for a Fortune 500 corporate employee wellness program",
   },
   {
     src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    alt: "Nurse taking a patient's blood pressure at a corporate health fair",
+    alt: "On-site chiropractic care and blood pressure screening at a corporate health fair run by Picture Perfect Health",
   },
   {
     src: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
-    alt: "Medical professional preparing equipment for a workplace screening event",
+    alt: "Clinical staff preparing biometric screening equipment for an employee wellness event",
   },
   {
     src: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80",
-    alt: "Healthcare professional joining a virtual wellness session",
+    alt: "Healthcare professional joining a Picture Perfect Health virtual contactless health fair",
   },
   {
     src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-    alt: "Group of professionals attending a workplace wellness workshop",
+    alt: "Fortune 500 employees attending the 12 Steps to Wellness corporate workshop with Dr. Eric Feintuch",
   },
   {
     src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
-    alt: "Clinician reviewing patient data on a tablet",
+    alt: "Picture Perfect Health clinician reviewing population health data for an enterprise wellness program",
   },
 ];
 

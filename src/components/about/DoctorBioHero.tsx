@@ -12,7 +12,7 @@ export function DoctorBioHero() {
               {/* Real photo of Dr. Eric Feintuch, sourced from pictureperfecthealth.com */}
               <UnsplashImage
                 src="https://pictureperfecthealth.com/Eric3.jpg"
-                alt="Portrait of Dr. Eric Feintuch, DC, founder of Picture Perfect Health"
+                alt="Portrait of Dr. Eric Feintuch, D.C., Long Island chiropractor and Fortune 500 wellness consultant, founder of Picture Perfect Health corporate employee wellness program"
                 priority
                 className="aspect-[4/5] object-contain"
               />

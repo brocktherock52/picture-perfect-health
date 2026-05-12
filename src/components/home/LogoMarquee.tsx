@@ -271,6 +271,8 @@ export function LogoMarquee() {
               key={`${logo.name}-${i}`}
               className="flex shrink-0 items-center transition-colors hover:text-foreground"
               title={logo.name}
+              role="img"
+              aria-label={`${logo.name} wordmark, past engagement of Picture Perfect Health`}
             >
               {logo.svg}
             </div>

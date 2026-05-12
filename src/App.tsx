@@ -1,12 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LeadCaptureModal } from "@/components/shared/LeadCaptureModal";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { ScrollProgress } from "@/components/shared/ScrollProgress";
 import { GrainOverlay } from "@/components/shared/GrainOverlay";
-import { organizationSchema } from "@/lib/schema";
+import { StickyScrollCTA } from "@/components/shared/StickyScrollCTA";
+import { organizationSchema, personSchema, faqSchema } from "@/lib/schema";
+import { generalFaqs } from "@/data/faq";
 
 import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
@@ -22,8 +25,10 @@ import NotFoundPage from "@/pages/NotFoundPage";
 function App() {
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
-      {/* Site-wide JSON-LD: Organization / ProfessionalService */}
+      {/* Site-wide JSON-LD: Organization / LocalBusiness / MedicalBusiness */}
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={personSchema()} />
+      <JsonLd data={faqSchema(generalFaqs)} />
 
       <ScrollProgress />
       <GrainOverlay />
@@ -47,11 +52,17 @@ function App() {
 
       <Footer />
 
+      {/* Sticky "Get a wellness audit" pill that surfaces below the fold */}
+      <StickyScrollCTA />
+
       {/* Scroll-triggered lead capture modal */}
       <LeadCaptureModal />
 
       {/* Sonner toaster for form success/error notifications */}
       <Toaster position="top-right" richColors closeButton />
+
+      {/* Vercel privacy-respecting analytics */}
+      <Analytics />
     </div>
   );
 }

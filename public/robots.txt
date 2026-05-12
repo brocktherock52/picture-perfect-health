@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
 
+# Be explicit so crawlers index every public route
+Allow: /about
+Allow: /services
+Allow: /portfolio
+Allow: /blog
+Allow: /membership
+Allow: /contact
+
+# Friendly to AI/answer-engine crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://pictureperfecthealth.com/sitemap.xml

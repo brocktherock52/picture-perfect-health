@@ -18,12 +18,21 @@ export const siteConfig = {
   phoneHref: "tel:+18004389355",
   email: "info@pictureperfecthealth.com",
   address: {
-    street: "Valley Stream",
+    street: "636 Nutley Place",
     locality: "Valley Stream",
     region: "NY",
-    postalCode: "11580",
+    postalCode: "11581",
     country: "US",
   },
+  geo: {
+    latitude: 40.6587,
+    longitude: -73.7085,
+  },
+  openingHours: ["Mo-Fr 09:00-18:00"],
+  foundingDate: "2006-06",
+  areaServed: [
+    "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming",
+  ],
   founder: {
     name: "Dr. Eric Feintuch, DC",
     fullName: "Dr. Eric Hal Feintuch, D.C., CCSD",
