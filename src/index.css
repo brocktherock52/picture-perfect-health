@@ -4,78 +4,100 @@
 
 @layer base {
   :root {
-    /* Claude-aesthetic warm sand canvas */
-    --background: 38 38% 96%;
-    --foreground: 215 35% 12%;
+    /* Stripe-energy warm gray + deep navy + coral accent. */
+    /* Base canvas: #F5F2EE */
+    --background: 33 25% 95%;
+    /* Foreground / primary text: deep navy #0F1B2D */
+    --foreground: 215 50% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 12%;
+    --card-foreground: 215 50% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 12%;
+    --popover-foreground: 215 50% 12%;
 
-    --primary: 215 60% 18%;
-    --primary-foreground: 38 38% 96%;
+    /* Navy primary */
+    --primary: 215 50% 12%;
+    --primary-foreground: 33 25% 96%;
 
-    --secondary: 166 60% 38%;
+    /* Coral accent #E8704F for CTAs only */
+    --secondary: 14 76% 61%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 38 25% 92%;
-    --muted-foreground: 215 18% 38%;
+    --muted: 33 20% 90%;
+    --muted-foreground: 215 18% 36%;
 
-    --accent: 38 60% 88%;
-    --accent-foreground: 215 60% 18%;
+    --accent: 33 25% 88%;
+    --accent-foreground: 215 50% 12%;
 
-    --gold: 30 78% 52%;
+    --gold: 14 76% 61%;
     --gold-foreground: 0 0% 100%;
+
+    --coral: 14 76% 61%;
+    --coral-foreground: 0 0% 100%;
+
+    --navy: 215 50% 12%;
+    --navy-foreground: 33 25% 96%;
+
+    --warmgray: 33 25% 95%;
+    --warmgray-foreground: 215 50% 12%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 38 18% 84%;
-    --input: 38 18% 84%;
-    --ring: 166 60% 38%;
+    --border: 33 12% 82%;
+    --input: 33 12% 82%;
+    --ring: 14 76% 61%;
 
-    --ink: 215 40% 9%;
-    --ink-foreground: 38 38% 96%;
+    --ink: 215 50% 9%;
+    --ink-foreground: 33 25% 96%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 215 45% 7%;
-    --foreground: 38 25% 95%;
+    --background: 215 50% 7%;
+    --foreground: 33 20% 95%;
 
-    --card: 215 40% 11%;
-    --card-foreground: 38 25% 95%;
+    --card: 215 45% 11%;
+    --card-foreground: 33 20% 95%;
 
-    --popover: 215 40% 11%;
-    --popover-foreground: 38 25% 95%;
+    --popover: 215 45% 11%;
+    --popover-foreground: 33 20% 95%;
 
-    --primary: 166 60% 50%;
-    --primary-foreground: 215 45% 7%;
+    --primary: 33 25% 95%;
+    --primary-foreground: 215 50% 7%;
 
-    --secondary: 215 35% 22%;
-    --secondary-foreground: 38 25% 95%;
+    --secondary: 14 76% 61%;
+    --secondary-foreground: 215 50% 7%;
 
-    --muted: 215 30% 16%;
-    --muted-foreground: 38 15% 70%;
+    --muted: 215 35% 16%;
+    --muted-foreground: 33 15% 70%;
 
-    --accent: 166 45% 18%;
-    --accent-foreground: 166 75% 85%;
+    --accent: 215 40% 18%;
+    --accent-foreground: 33 20% 95%;
 
-    --gold: 30 78% 60%;
-    --gold-foreground: 215 45% 7%;
+    --gold: 14 76% 65%;
+    --gold-foreground: 215 50% 7%;
+
+    --coral: 14 76% 65%;
+    --coral-foreground: 215 50% 7%;
+
+    --navy: 33 25% 95%;
+    --navy-foreground: 215 50% 7%;
+
+    --warmgray: 215 45% 11%;
+    --warmgray-foreground: 33 20% 95%;
 
     --destructive: 0 62% 45%;
-    --destructive-foreground: 38 25% 95%;
+    --destructive-foreground: 33 20% 95%;
 
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 166 60% 50%;
+    --border: 215 30% 20%;
+    --input: 215 30% 20%;
+    --ring: 14 76% 61%;
 
-    --ink: 38 25% 95%;
-    --ink-foreground: 215 45% 7%;
+    --ink: 33 20% 95%;
+    --ink-foreground: 215 50% 7%;
   }
 }
 
@@ -93,9 +115,10 @@
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
   }
 
+  /* Stripe vibe: display headings use Inter Tight tight tracking, NOT serif. */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
-    font-feature-settings: "ss01" 1, "ss02" 1;
+    @apply font-display tracking-tight;
+    letter-spacing: -0.02em;
   }
 
   :focus-visible {
@@ -103,8 +126,8 @@
   }
 
   ::selection {
-    background-color: hsl(var(--secondary) / 0.25);
-    color: hsl(var(--ink));
+    background-color: hsl(var(--coral) / 0.25);
+    color: hsl(var(--navy));
   }
 }
 
@@ -115,9 +138,12 @@
   .text-pretty {
     text-wrap: pretty;
   }
+  .font-pull-quote {
+    font-family: "Source Serif 4", Georgia, serif;
+  }
 }
 
-/* Custom cursor */
+/* Custom cursor (preserved). */
 @media (hover: hover) and (pointer: fine) {
   body.cursor-none-host,
   body.cursor-none-host * {
@@ -128,37 +154,36 @@
   width: 56px;
   height: 56px;
   margin: 0;
-  background: hsl(var(--secondary) / 0.12);
-  border-color: hsl(var(--secondary));
+  background: hsl(var(--coral) / 0.12);
+  border-color: hsl(var(--coral));
 }
 .ppr-cursor-ring.is-large {
   width: 92px;
   height: 92px;
-  background: hsl(var(--secondary));
-  border-color: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
+  background: hsl(var(--coral));
+  border-color: hsl(var(--coral));
+  color: hsl(var(--coral-foreground));
 }
 .ppr-cursor-ring.is-large span {
-  color: hsl(var(--secondary-foreground));
+  color: hsl(var(--coral-foreground));
 }
 .ppr-cursor-ring.is-invert {
-  border-color: hsl(38 38% 96%);
+  border-color: hsl(33 25% 95%);
   mix-blend-mode: difference;
 }
 .ppr-cursor-dot {
   mix-blend-mode: difference;
-  background: hsl(38 38% 96%);
+  background: hsl(33 25% 95%);
 }
 
-/* Section-wide cursor color flips for dark sections */
 [data-cursor-invert] {
-  --foreground: 38 38% 96%;
+  --foreground: 33 25% 95%;
 }
 
-/* Editorial display utilities */
+/* Display utilities. */
 .display-tight {
   letter-spacing: -0.035em;
-  line-height: 0.92;
+  line-height: 0.95;
 }
 .display-loose {
   letter-spacing: -0.02em;
@@ -169,46 +194,33 @@
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
 }
 
-/* Magazine-style number watermark */
-.watermark-num {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
-  font-feature-settings: "ss01" 1, "lnum" 1;
-  letter-spacing: -0.06em;
-  line-height: 0.8;
+/* Stripe-style hero wave. */
+.hero-wave-mask {
+  mask-image: linear-gradient(180deg, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, black 70%, transparent 100%);
 }
 
-/* Marquee row that uses CSS animation so :hover pause works reliably */
+/* Cross-fade logo carousel: each child fades in turn. */
+@keyframes logo-crossfade {
+  0%, 16% { opacity: 0; transform: translateY(6px); }
+  4%, 12% { opacity: 1; transform: translateY(0); }
+  20%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+
+/* Preserved legacy marquee keyframes (only used if needed elsewhere). */
 @keyframes marquee-left {
   from { transform: translate3d(0, 0, 0); }
   to { transform: translate3d(-50%, 0, 0); }
-}
-@keyframes marquee-right {
-  from { transform: translate3d(-50%, 0, 0); }
-  to { transform: translate3d(0, 0, 0); }
 }
 .marquee-row {
   animation: marquee-left 42s linear infinite;
   will-change: transform;
 }
-.marquee-row-fast {
-  animation: marquee-left 28s linear infinite;
-  will-change: transform;
-}
-.marquee-row-reverse {
-  animation: marquee-right 34s linear infinite;
-  will-change: transform;
-}
-.marquee-wrap:hover .marquee-row,
-.marquee-wrap:hover .marquee-row-fast,
-.marquee-wrap:hover .marquee-row-reverse {
-  animation-play-state: paused;
-}
 
-/* Subtle paper grain mix-mode helper */
+/* Subtle paper grain mix-mode helper. */
 .paper-grain::before {
   content: "";
   position: absolute;
@@ -216,6 +228,37 @@
   pointer-events: none;
   opacity: 0.08;
   mix-blend-mode: multiply;
-  background-image: radial-gradient(hsl(215 35% 12% / 0.5) 1px, transparent 1px);
+  background-image: radial-gradient(hsl(215 50% 12% / 0.5) 1px, transparent 1px);
   background-size: 3px 3px;
+}
+
+/* Mouse-follow glow on logo tile (Stripe vibe). */
+.logo-tile {
+  position: relative;
+  isolation: isolate;
+}
+.logo-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    hsl(var(--coral) / 0.10),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.logo-tile:hover::before {
+  opacity: 1;
+}
+
+/* Pull-quote utility. */
+.pull-quote {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.01em;
 }

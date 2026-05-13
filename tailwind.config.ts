@@ -59,6 +59,18 @@ const config: Config = {
           DEFAULT: "hsl(var(--gold))",
           foreground: "hsl(var(--gold-foreground))",
         },
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          foreground: "hsl(var(--coral-foreground))",
+        },
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          foreground: "hsl(var(--navy-foreground))",
+        },
+        warmgray: {
+          DEFAULT: "hsl(var(--warmgray))",
+          foreground: "hsl(var(--warmgray-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -67,19 +79,20 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['"Inter"', "system-ui", "sans-serif"],
-        serif: ['"Fraunces"', "Georgia", "serif"],
+        display: ['"Inter Tight"', '"Inter"', "system-ui", "sans-serif"],
+        serif: ['"Source Serif 4"', "Georgia", "serif"],
       },
       boxShadow: {
-        soft: "0 8px 30px -10px rgba(18, 48, 92, 0.15)",
-        ringTeal: "0 0 0 3px rgba(43, 184, 160, 0.3)",
+        soft: "0 8px 30px -10px rgba(15, 27, 45, 0.15)",
+        ringCoral: "0 0 0 3px rgba(232, 112, 79, 0.3)",
       },
       backgroundImage: {
         "hero-gradient":
-          "linear-gradient(135deg, hsl(215 60% 18%) 0%, hsl(215 50% 26%) 55%, hsl(30 78% 52%) 100%)",
+          "linear-gradient(180deg, hsl(33 25% 95%) 0%, hsl(33 25% 92%) 60%, hsl(33 20% 88%) 100%)",
         "section-gradient":
-          "linear-gradient(180deg, hsl(38 38% 96%) 0%, hsl(0 0% 100%) 100%)",
-        "ink-radial":
-          "radial-gradient(circle at top right, hsl(30 78% 52% / 0.16), transparent 60%)",
+          "linear-gradient(180deg, hsl(33 25% 95%) 0%, hsl(0 0% 100%) 100%)",
+        "navy-radial":
+          "radial-gradient(circle at top right, hsl(15 78% 60% / 0.10), transparent 60%)",
       },
       keyframes: {
         "accordion-down": {
@@ -93,6 +106,11 @@ const config: Config = {
         "fade-in-up": {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "logo-fade": {
+          "0%, 20%": { opacity: "1" },
+          "25%, 95%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       animation: {

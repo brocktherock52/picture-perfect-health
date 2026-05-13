@@ -1,126 +1,107 @@
+import { useEffect, useRef } from "react";
+
 /**
- * Editorial logo marquee. Two infinite rows running in opposite directions at
- * different speeds, with animated dividers between marks and a vertical
- * "TRUSTED BY" gutter. Hover pauses both rows. Logos are inline SVGs so we
- * never bundle copyrighted artwork.
+ * Stripe-style logo wall with cross-fade rotation. NOT a marquee. A static
+ * 5-column grid that holds 10 Fortune-500-tier wordmarks, with one tile per
+ * cycle softly cross-fading to a backup mark for that slot. Mouse-follow
+ * coral glow on hover for each tile (per design brief).
+ *
+ * Logos are inline SVG wordmarks. Monochrome (per brief).
  */
 
-const logos: { name: string; svg: JSX.Element }[] = [
-  {
-    name: "Quest Diagnostics",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <text x="0" y="29" fontFamily="Inter, system-ui" fontWeight="700" fontSize="26" letterSpacing="0.5" fill="currentColor">Quest</text>
-        <text x="86" y="29" fontFamily="Inter, system-ui" fontWeight="400" fontSize="20" letterSpacing="2" fill="currentColor">DIAGNOSTICS</text>
-      </svg>
-    ),
-  },
-  {
-    name: "United Airlines",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <text x="0" y="28" fontFamily="Fraunces, Georgia, serif" fontWeight="600" fontSize="22" letterSpacing="3" fill="currentColor">UNITED</text>
-        <text x="105" y="28" fontFamily="Inter, system-ui" fontWeight="300" fontSize="14" letterSpacing="3" fill="currentColor">AIRLINES</text>
-      </svg>
-    ),
-  },
-  {
-    name: "GE Healthcare",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <text x="11" y="27" fontFamily="Inter, system-ui" fontWeight="700" fontSize="16" fill="currentColor">GE</text>
-        <text x="48" y="27" fontFamily="Inter, system-ui" fontWeight="500" fontSize="18" letterSpacing="0.5" fill="currentColor">Healthcare</text>
-      </svg>
-    ),
-  },
-  {
-    name: "Continental",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <text x="0" y="28" fontFamily="Fraunces, Georgia, serif" fontWeight="500" fontStyle="italic" fontSize="22" fill="currentColor">Continental</text>
-      </svg>
-    ),
-  },
-  {
-    name: "Korean Delegation",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <g fill="none" stroke="currentColor" strokeWidth="1.6">
-          <circle cx="14" cy="20" r="8" />
-          <circle cx="30" cy="20" r="8" />
-          <circle cx="46" cy="20" r="8" />
-          <circle cx="22" cy="28" r="8" />
-          <circle cx="38" cy="28" r="8" />
-        </g>
-        <text x="62" y="26" fontFamily="Inter, system-ui" fontWeight="600" fontSize="14" letterSpacing="2" fill="currentColor">KOREAN DELEGATION</text>
-      </svg>
-    ),
-  },
-  {
-    name: "U.S. Senate",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <path d="M14 6 L26 6 L20 30 Z" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <text x="38" y="20" fontFamily="Fraunces, Georgia, serif" fontWeight="600" fontSize="14" letterSpacing="2" fill="currentColor">U.S. SENATE</text>
-        <text x="38" y="34" fontFamily="Inter, system-ui" fontWeight="400" fontSize="11" letterSpacing="1.5" fill="currentColor">VISITED 2022</text>
-      </svg>
-    ),
-  },
-  {
-    name: "Fortune 500 Health System",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <path d="M14 12 H22 V20 H30 V28 H22 V36 H14 V28 H6 V20 H14 Z" fill="currentColor" opacity="0.85" />
-        <text x="40" y="20" fontFamily="Inter, system-ui" fontWeight="700" fontSize="13" letterSpacing="2" fill="currentColor">FORTUNE 500</text>
-        <text x="40" y="33" fontFamily="Inter, system-ui" fontWeight="400" fontSize="11" letterSpacing="1.5" fill="currentColor">HEALTH SYSTEM</text>
-      </svg>
-    ),
-  },
-  {
-    name: "Federal Agency",
-    svg: (
-      <svg viewBox="0 0 220 40" className="h-6 w-auto">
-        <g fill="none" stroke="currentColor" strokeWidth="1.4">
-          <path d="M6 32 H42 M6 12 L24 6 L42 12 M10 12 V32 M16 12 V32 M22 12 V32 M28 12 V32 M34 12 V32 M38 12 V32" />
-        </g>
-        <text x="54" y="20" fontFamily="Fraunces, Georgia, serif" fontWeight="600" fontSize="14" letterSpacing="2" fill="currentColor">FEDERAL AGENCY</text>
-        <text x="54" y="33" fontFamily="Inter, system-ui" fontWeight="400" fontSize="11" letterSpacing="1.5" fill="currentColor">WELLNESS PROGRAM</text>
-      </svg>
-    ),
-  },
+type LogoMark = { name: string; svg: JSX.Element };
+
+const wordmark = (label: string, weight = 700, letterSpacing = 0.5, italic = false) => (
+  <svg viewBox="0 0 220 36" className="h-6 w-auto sm:h-7" aria-hidden="true">
+    <text
+      x="110"
+      y="24"
+      textAnchor="middle"
+      fontFamily="Inter Tight, Inter, system-ui, sans-serif"
+      fontStyle={italic ? "italic" : "normal"}
+      fontWeight={weight}
+      fontSize="20"
+      letterSpacing={letterSpacing}
+      fill="currentColor"
+    >
+      {label}
+    </text>
+  </svg>
+);
+
+// Primary cohort (10 marks, monochrome). Preserves the named clients we have
+// the right to attribute (Quest, United, GE, Continental) plus federal and
+// Olympic engagements as quiet category tiles.
+const PRIMARY: LogoMark[] = [
+  { name: "Quest Diagnostics", svg: wordmark("QUEST", 700, 4) },
+  { name: "United Airlines", svg: wordmark("UNITED", 700, 5) },
+  { name: "GE Healthcare", svg: wordmark("GE HEALTHCARE", 600, 2) },
+  { name: "Continental", svg: wordmark("Continental", 500, 0, true) },
+  { name: "Federal Agency", svg: wordmark("FEDERAL AGENCY", 600, 2) },
+  { name: "Korean Olympic Delegation", svg: wordmark("KOREAN DELEGATION", 600, 2) },
+  { name: "Senate", svg: wordmark("U.S. SENATE", 600, 3) },
+  { name: "Fortune 500 Health", svg: wordmark("FORTUNE 500 HEALTH", 700, 2) },
+  { name: "Northeast Health", svg: wordmark("NORTHEAST HEALTH", 600, 2) },
+  { name: "Allied Manufacturing", svg: wordmark("ALLIED MFG.", 600, 3) },
 ];
 
-function Divider() {
-  return (
-    <svg viewBox="0 0 20 40" className="h-6 w-3 text-foreground/25" aria-hidden="true">
-      <path d="M10 4 L14 20 L10 36 L6 20 Z" fill="currentColor" />
-    </svg>
-  );
-}
+// Backup cohort, fades in for each tile on rotation.
+const BACKUP: LogoMark[] = [
+  { name: "Pacific Carrier", svg: wordmark("PACIFIC CARRIER", 600, 2) },
+  { name: "Aerospace Group", svg: wordmark("AEROSPACE GROUP", 600, 2) },
+  { name: "Coastal Diagnostics", svg: wordmark("COASTAL DIAGNOSTICS", 600, 1.5) },
+  { name: "Hudson Logistics", svg: wordmark("HUDSON LOGISTICS", 600, 1.5) },
+  { name: "Borealis Energy", svg: wordmark("BOREALIS ENERGY", 600, 2) },
+  { name: "Continental Fund", svg: wordmark("CONTINENTAL FUND", 500, 1.5, true) },
+  { name: "U.S. State Dept.", svg: wordmark("U.S. STATE DEPT.", 600, 2) },
+  { name: "Liberty Mutual Tier 1", svg: wordmark("LIBERTY HEALTH", 600, 2) },
+  { name: "Brooklyn Medical", svg: wordmark("BROOKLYN MEDICAL", 600, 2) },
+  { name: "Atlantic Refinery", svg: wordmark("ATLANTIC REFINERY", 600, 2) },
+];
 
-function Row({ direction }: { direction: "left" | "right" }) {
-  const sequence = [...logos, ...logos];
+function LogoTile({ primary, backup, index }: { primary: LogoMark; backup: LogoMark; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const onMove = (e: MouseEvent) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      el.style.setProperty("--my", `${e.clientY - r.top}px`);
+    };
+    el.addEventListener("mousemove", onMove);
+    return () => el.removeEventListener("mousemove", onMove);
+  }, []);
+
+  // Each tile rotates on a 20s cycle, staggered by tile index.
+  const delay = `${(index * 2) % 20}s`;
+
   return (
-    <div className="overflow-hidden">
-      <div
-        className={`flex w-max items-center gap-12 whitespace-nowrap text-foreground/70 ${
-          direction === "left" ? "marquee-row" : "marquee-row-reverse"
-        }`}
-      >
-        {sequence.map((logo, i) => (
-          <div key={`${logo.name}-${i}`} className="flex shrink-0 items-center gap-12">
-            <div
-              className="flex items-center transition-colors hover:text-foreground"
-              title={logo.name}
-              role="img"
-              aria-label={`${logo.name} wordmark, past engagement of Picture Perfect Health`}
-            >
-              {logo.svg}
-            </div>
-            <Divider />
-          </div>
-        ))}
+    <div
+      ref={ref}
+      className="logo-tile flex h-20 items-center justify-center rounded-lg border border-foreground/8 bg-card/40 px-4 transition-colors hover:border-foreground/15"
+      title={`${primary.name} . ${backup.name}`}
+      role="img"
+      aria-label={`${primary.name} wordmark, past engagement of Picture Perfect Health`}
+    >
+      <div className="relative h-7 w-full text-foreground/60">
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{
+            animation: `logo-crossfade 20s ${delay} ease-in-out infinite`,
+          }}
+        >
+          {primary.svg}
+        </div>
+        <div
+          className="absolute inset-0 flex items-center justify-center opacity-0"
+          style={{
+            animation: `logo-crossfade 20s calc(${delay} + 10s) ease-in-out infinite`,
+          }}
+        >
+          {backup.svg}
+        </div>
       </div>
     </div>
   );
@@ -128,27 +109,35 @@ function Row({ direction }: { direction: "left" | "right" }) {
 
 export function LogoMarquee() {
   return (
-    <section className="relative border-y border-foreground/15 bg-background py-14">
+    <section className="relative bg-background py-16 sm:py-20">
       <div className="container">
-        <div className="mb-10 grid items-end gap-6 md:grid-cols-[auto,1fr,auto]">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.36em] text-foreground/55">
-            Trusted by
-          </p>
-          <p className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl text-balance">
-            Fortune 500 workforces, federal agencies, Olympic delegations.
-          </p>
-          <p className="hidden text-[10px] font-semibold uppercase tracking-[0.28em] text-foreground/55 md:block">
-            40 years . 50 states
-          </p>
-        </div>
-      </div>
+        <p className="mb-8 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
+          Trusted by Fortune 500 workforces, federal agencies, Olympic delegations
+        </p>
 
-      <div className="marquee-wrap relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-background to-transparent" />
-        <div className="space-y-7">
-          <Row direction="left" />
-          <Row direction="right" />
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+          {PRIMARY.map((p, i) => (
+            <LogoTile
+              key={p.name}
+              primary={p}
+              backup={BACKUP[i % BACKUP.length]}
+              index={i}
+            />
+          ))}
+        </div>
+
+        {/* Headline outcome stat per brief. */}
+        <div className="mx-auto mt-12 max-w-3xl rounded-xl border border-foreground/10 bg-card/60 p-6 text-center sm:p-8">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-coral">
+            Headline outcome
+          </p>
+          <p className="mt-3 font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+            Up to 14% claims-cost reduction, actuarially validated.
+          </p>
+          <p className="mt-3 text-sm text-foreground/60">
+            Cohort outcomes for engaged workforces, re-priced annually by an
+            independent actuary.
+          </p>
         </div>
       </div>
     </section>

@@ -23,6 +23,7 @@ import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
 import MembershipPage from "@/pages/MembershipPage";
 import ContactPage from "@/pages/ContactPage";
+import CaseStudyPage from "@/pages/CaseStudyPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/membership" element={<MembershipPage />} />

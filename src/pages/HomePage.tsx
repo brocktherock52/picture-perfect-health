@@ -1,7 +1,9 @@
 import { Hero } from "@/components/home/Hero";
+import { ActuarialValidation } from "@/components/home/ActuarialValidation";
 import { LogoMarquee } from "@/components/home/LogoMarquee";
 import { StatsStrip } from "@/components/home/StatsStrip";
 import { CaseStudyTriptych } from "@/components/home/CaseStudyTriptych";
+import { IntegrationsSection } from "@/components/home/IntegrationsSection";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { TwelveStepsScrolly } from "@/components/home/TwelveStepsScrolly";
 import { PressMentions } from "@/components/home/PressMentions";
@@ -39,9 +41,11 @@ export default function HomePage() {
       />
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }])} />
       <Hero />
+      <ActuarialValidation />
       <LogoMarquee />
       <StatsStrip />
       <CaseStudyTriptych />
+      <IntegrationsSection />
       <ServicesGrid />
       <TwelveStepsScrolly />
       <PressMentions />
