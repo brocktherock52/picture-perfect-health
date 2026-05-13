@@ -114,7 +114,10 @@ export function StatsStrip() {
                   delay={i * 0.15}
                 />
                 {s.suffix ? (
-                  <span className="font-serif text-5xl font-semibold text-foreground sm:text-6xl">
+                  <span
+                    className="font-serif font-semibold text-foreground"
+                    style={{ fontSize: "clamp(1.75rem, 3.5vw, 3.25rem)" }}
+                  >
                     {s.suffix}
                   </span>
                 ) : null}
@@ -186,8 +189,12 @@ function CountUp({
   const final = n === value ? display : formatted;
   return (
     <span
-      className="watermark-num block font-serif text-7xl font-semibold tabular-nums text-foreground sm:text-8xl md:text-[7.5rem] lg:text-[8rem]"
-      style={{ letterSpacing: "-0.04em" }}
+      className="watermark-num block font-serif font-semibold tabular-nums text-foreground"
+      style={{
+        letterSpacing: "-0.04em",
+        fontSize: "clamp(2.75rem, 6vw, 5.25rem)",
+        lineHeight: "1",
+      }}
     >
       {final}
     </span>

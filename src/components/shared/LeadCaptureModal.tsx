@@ -12,13 +12,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { leadFormSchema, type LeadFormData } from "@/lib/validators/lead";
 
-const STORAGE_KEY = "pph_lead_modal_seen";
-
+/**
+ * Lead capture modal. Opens only when explicitly triggered via a CTA dispatching
+ * a CustomEvent named "pph:open-lead-modal". No auto-open on scroll, no popup
+ * on first visit. Auto-open was too intrusive and dominated the viewport on
+ * load, blocking the editorial design.
+ */
 export function LeadCaptureModal() {
-  const reachedDepth = useScrollDepth(50);
   const [open, setOpen] = useState(false);
 
   const {
@@ -32,15 +34,10 @@ export function LeadCaptureModal() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
-    if (reachedDepth) {
-      const timer = setTimeout(() => {
-        setOpen(true);
-        sessionStorage.setItem(STORAGE_KEY, "1");
-      }, 800);
-      return () => clearTimeout(timer);
-    }
-  }, [reachedDepth]);
+    const onOpen = () => setOpen(true);
+    window.addEventListener("pph:open-lead-modal", onOpen);
+    return () => window.removeEventListener("pph:open-lead-modal", onOpen);
+  }, []);
 
   const onSubmit = async (data: LeadFormData) => {
     // TODO: connect form backend
